@@ -174,6 +174,15 @@ public class SparkTable implements Table, SupportsRead, SupportsWrite {
   }
 
   /**
+   * Returns the Path to the Delta table root.
+   *
+   * @return Path created from the table path
+   */
+  public Path getTablePath() {
+    return new Path(tablePath);
+  }
+
+  /**
    * Returns the table name in a format compatible with DeltaTableV2.
    *
    * <p>For catalog-based tables, returns the fully qualified table name (e.g.,

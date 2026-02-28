@@ -193,6 +193,10 @@ public class SparkTableTest extends DeltaV2TestBase {
             "Retrieved catalog table should match the original");
         break;
     }
+
+    // ===== Test getTablePath returns Path from tablePath =====
+    Path retrievedPath = kernelTable.getTablePath();
+    assertEquals(new Path(path), retrievedPath, "getTablePath should return Path from tablePath");
   }
 
   /** Enum to represent different construction methods for SparkTable */
